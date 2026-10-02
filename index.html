@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Expense Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <!-- LEFT SIDE -->
+        <section class="welcome-side">
+
+            <div class="welcome-content">
+
+                <div class="logo">₱</div>
+
+                <h1>Student<br>Expense Tracker</h1>
+
+                <p>
+                    Take control of your spending,
+                    one expense at a time.
+                </p>
+
+                <!-- Simple decorative illustration -->
+                <div class="expense-illustration">
+                    <div class="wallet">
+                        <span>₱</span>
+                    </div>
+
+                    <div class="coin coin-one">₱</div>
+                    <div class="coin coin-two">₱</div>
+                    <div class="coin coin-three">₱</div>
+                </div>
+
+                <p class="welcome-small">
+                    Track • Manage • Save
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+        <section class="login-side">
+
+            <div class="auth-card">
+
+                <!-- LOGIN FORM -->
+                <div id="loginForm">
+
+                    <h2>Welcome Back! 👋</h2>
+
+                    <p class="subtitle">
+                        Sign in to continue to your expense tracker.
+                    </p>
+
+                    <label for="loginEmail">Email</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                    >
+
+                    <label for="loginPassword">Password</label>
+
+                    <div class="password-wrapper">
+    <input
+        type="password"
+        id="loginPassword"
+        placeholder="Enter your password"
+    >
+    <button type="button" class="password-toggle" id="toggleLoginPassword">👁</button>
+</div>
+
+                    <button id="loginBtn" class="main-button">
+                        Log In
+                    </button>
+
+                    <p id="loginMessage" class="message"></p>
+
+                    <p class="switch-text">
+                        Don't have an account?
+                        <button id="showRegister" class="link-button">
+                            Sign Up
+                        </button>
+                    </p>
+
+                </div>
+
+
+                <!-- REGISTER FORM -->
+                <div id="registerForm" style="display: none;">
+
+                    <h2>Create Your Account 🌸</h2>
+
+                    <p class="subtitle">
+                        Start tracking your expenses today.
+                    </p>
+
+                    <label for="registerEmail">Email</label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                    >
+
+                    <label for="registerPassword">Password</label>
+
+                    <div class="password-wrapper">
+    <input
+        type="password"
+        id="registerPassword"
+        placeholder="Create a password"
+    >
+    <button type="button" class="password-toggle" id="toggleRegisterPassword">👁</button>
+</div>
+
+                    <button id="registerBtn" class="main-button">
+                        Sign Up
+                    </button>
+
+                    <p id="registerMessage" class="message"></p>
+
+                    <p class="switch-text">
+                        Already have an account?
+                        <button id="showLogin" class="link-button">
+                            Log In
+                        </button>
+                    </p>
+
+                </div>
+                </div>
+
+
+                <!-- DASHBOARD -->
+<div id="dashboardSection">
+
+    <div class="dashboard-header">
+        <div>
+            <h2>My Expenses 🌷</h2>
+            <p id="userEmail"></p>
+        </div>
+
+        <button id="logoutBtn" class="logout-button">
+            Log Out
+        </button>
+    </div>
+
+    <!-- SUMMARY CARDS -->
+    <div class="summary-cards">
+
+        <div class="summary-card">
+            <span>Total Expenses</span>
+            <strong id="totalExpenses">₱0.00</strong>
+        </div>
+
+        <div class="summary-card">
+            <span>Number of Expenses</span>
+            <strong id="expenseCount">0</strong>
+        </div>
+
+    </div>
+
+    <!-- ADD EXPENSE -->
+    <div class="expense-form">
+
+        <h3>Add New Expense</h3>
+
+        <div class="form-row">
+
+            <input
+                type="text"
+                id="expenseDescription"
+                placeholder="Expense description"
+            >
+
+            <input
+                type="number"
+                id="expenseAmount"
+                placeholder="Amount"
+                min="0"
+                step="0.01"
+            >
+
+        </div>
+
+        <div class="form-row">
+
+            <select id="expenseCategory">
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transportation">Transportation</option>
+                <option value="School">School</option>
+                <option value="Bills">Bills</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <input
+                type="date"
+                id="expenseDate"
+            >
+
+        </div>
+
+        <button id="addExpenseBtn" class="main-button">
+            + Add Expense
+        </button>
+
+        <p id="expenseMessage" class="message"></p>
+
+    </div>
+
+    <!-- EXPENSE CHART -->
+<div class="expense-chart">
+
+    <h3>Expenses by Category</h3>
+
+    <div class="chart-container">
+        <canvas id="expenseChart"></canvas>
+    </div>
+
+</div>
+
+    <!-- EXPENSE LIST -->
+    <div class="expense-list">
+
+        <h3>Recent Expenses</h3>
+
+        <div id="expenseItems">
+            <p class="empty-message">
+                No expenses added yet.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+</div> <!-- CLOSE DASHBOARD -->
+
+</section> <!-- CLOSE LOGIN SIDE -->
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
